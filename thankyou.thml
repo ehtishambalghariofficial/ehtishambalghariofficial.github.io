@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0f0f0f;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #00ffae;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 20px;
+      color: #dddddd;
+      max-width: 500px;
+    }
+
+    a {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #00ffae;
+      color: #121212;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #00e39d;
+    }
+
+    /* Bubble styles */
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 0.5;
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-120vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Thank You!</h1>
+  <p>Your message has been successfully sent.<br>I’ll try to reply as soon as possible, even if there’s a delay.</p>
+  <a href="https://ehtishambalghariofficial.github.io">Back to Home</a>
+
+  <!-- Bubble Animation -->
+  <script>
+    const colors = ['rgba(0,255,174,0.3)', 'rgba(255,255,255,0.2)', 'rgba(0,200,255,0.4)'];
+
+    for (let i = 0; i < 35; i++) {
+      let bubble = document.createElement("div");
+      bubble.className = "bubble";
+      let size = Math.random() * 15 + 10;
+      bubble.style.width = bubble.style.height = `${size}px`;
+      bubble.style.left = `${Math.random() * 100}vw`;
+      bubble.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      bubble.style.animationDuration = `${Math.random() * 3 + 2}s`; // Faster: 2–5 sec
+      document.body.appendChild(bubble);
+    }
+  </script>
+</body>
+</html>
